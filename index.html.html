@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Resume and portfolio website of Abhijeet Santosh Joshi">
+<title>Abhijeet Santosh Joshi | Resume & Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root{
+  --primary:#1e3a8a;--blue:#2563eb;--dark:#0f172a;--text:#334155;
+  --muted:#64748b;--bg:#f1f5f9;--white:#fff;--border:#e2e8f0;
+  --soft:#eff6ff;--green:#10b981;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.navbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1100px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.1rem;font-weight:800;color:var(--dark)} .logo span{color:var(--blue)}
+.nav-links{display:flex;gap:22px;align-items:center}
+.nav-links a{font-size:.88rem;font-weight:600;color:var(--muted);transition:.2s}
+.nav-links a:hover{color:var(--blue)}
+.menu{display:none;border:0;background:none;font-size:1.3rem;color:var(--dark)}
+.container{max-width:1050px;margin:35px auto;background:var(--white);border:1px solid var(--border);box-shadow:0 15px 40px rgba(15,23,42,.08);border-radius:18px;overflow:hidden}
+.hero{background:linear-gradient(135deg,#172554,#1e40af 60%,#2563eb);color:white;padding:55px 48px}
+.hero-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
+.eyebrow{text-transform:uppercase;letter-spacing:1.5px;font-size:.75rem;font-weight:700;color:#bfdbfe;margin-bottom:10px}
+.hero h1{font-size:2.65rem;line-height:1.15;margin-bottom:10px}
+.hero p{color:#dbeafe;font-size:1.05rem}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 17px;border-radius:8px;font-weight:700;font-size:.88rem;cursor:pointer;border:1px solid transparent;transition:.2s}
+.btn-light{background:#fff;color:var(--primary)} .btn-light:hover{transform:translateY(-2px)}
+.btn-outline{border-color:#bfdbfe;color:white;background:transparent}.btn-outline:hover{background:rgba(255,255,255,.1)}
+.hero-badge{width:105px;height:105px;border-radius:50%;background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;font-size:2.4rem;font-weight:800;flex:none}
+.contact{background:var(--dark);color:#cbd5e1;padding:15px 48px;display:flex;gap:25px;flex-wrap:wrap}
+.contact a{font-size:.87rem;display:flex;gap:8px;align-items:center}.contact a:hover{color:#60a5fa}
+.grid{display:grid;grid-template-columns:1.75fr 1fr;gap:38px;padding:42px 48px}
+section{margin-bottom:38px;scroll-margin-top:80px}
+.title{font-size:1.18rem;color:var(--dark);font-weight:800;border-bottom:2px solid var(--border);padding-bottom:9px;margin-bottom:18px;display:flex;gap:10px;align-items:center}
+.title i{color:var(--blue);font-size:1rem}
+p{font-size:.93rem}
+.timeline{border-left:2px solid #bfdbfe;padding-left:20px;margin-left:5px}
+.item{position:relative;margin-bottom:28px}
+.item:last-child{margin-bottom:0}
+.item:before{content:"";position:absolute;left:-27px;top:5px;width:10px;height:10px;background:var(--blue);border-radius:50%;box-shadow:0 0 0 4px #dbeafe}
+.role{font-size:1.03rem;font-weight:800;color:var(--dark);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.date{font-size:.78rem;color:var(--muted);font-weight:600}
+.company{color:var(--primary);font-weight:700;margin:3px 0 8px}
+ul{padding-left:19px}li{font-size:.9rem;margin-bottom:6px}
+table{width:100%;border-collapse:collapse;font-size:.84rem}
+th,td{padding:11px 10px;text-align:left;border-bottom:1px solid var(--border)}
+th{background:#f8fafc;color:#475569}
+.score{font-weight:800;color:var(--primary)}
+.skill-group{margin-bottom:18px}.skill-heading{font-size:.74rem;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);font-weight:800;margin-bottom:8px}
+.tags{display:flex;gap:7px;flex-wrap:wrap}.tag{padding:5px 9px;background:var(--soft);color:#1e40af;border-radius:6px;font-size:.78rem;font-weight:700}
+.clean{list-style:none;padding:0}.clean li{display:flex;gap:9px}.clean i{color:var(--green);margin-top:5px}
+.contact-card{background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:15px}
+.contact-card div{font-size:.85rem;margin-bottom:8px}.contact-card div:last-child{margin:0}
+footer{text-align:center;padding:20px;background:#f8fafc;border-top:1px solid var(--border);color:#94a3b8;font-size:.8rem}
+@media(max-width:800px){
+  .nav-links{display:none;position:absolute;top:59px;left:0;right:0;background:white;padding:16px 22px;border-bottom:1px solid var(--border);flex-direction:column;align-items:flex-start}
+  .nav-links.show{display:flex}.menu{display:block}
+  .container{margin:18px 10px;border-radius:14px}.hero{padding:38px 25px}.hero-inner{align-items:flex-start}
+  .hero h1{font-size:2rem}.hero-badge{width:78px;height:78px;font-size:1.7rem}
+  .contact{padding:14px 25px}.grid{grid-template-columns:1fr;padding:30px 25px;gap:0}
+}
+@media print{
+  .navbar,.hero-actions,footer{display:none}.container{margin:0;border:0;box-shadow:none}.hero{padding:30px}.grid{padding:25px}.contact{padding:12px 25px}body{background:white}
+}
+</style>
+</head>
+
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="logo" href="#top">AJ<span>.</span></a>
+    <button class="menu" aria-label="Open menu" onclick="document.querySelector('.nav-links').classList.toggle('show')"><i class="fa-solid fa-bars"></i></button>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a>
+      <a href="#skills">Skills</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container" id="top">
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Resume & Portfolio</div>
+      <h1>Abhijeet Santosh Joshi</h1>
+      <p>PGDM Candidate (IMDR Pune) &nbsp;|&nbsp; Former CA Articleship Trainee</p>
+      <div class="hero-actions">
+        <button class="btn btn-light" onclick="window.print()"><i class="fa-solid fa-file-arrow-down"></i> Print / Save PDF</button>
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/abhijeet-joshi-203ab63b3" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+    <div class="hero-badge">AJ</div>
+  </div>
+</header>
+
+<div class="contact" id="contact">
+  <a href="mailto:abhijeetjoshi64@gmail.com"><i class="fa-regular fa-envelope"></i> abhijeetjoshi64@gmail.com</a>
+  <a href="tel:+918830607570"><i class="fa-solid fa-phone"></i> +91 8830607570</a>
+  <a href="https://www.linkedin.com/in/abhijeet-joshi-203ab63b3" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</a>
+</div>
+
+<div class="grid">
+<main>
+<section id="about">
+<h2 class="title"><i class="fa-solid fa-bullseye"></i> Objective</h2>
+<p>Seeking an opportunity to utilize my PGDM knowledge, analytical skills, and enthusiasm for learning in a dynamic organization. Committed to contributing to organizational success while continuously developing my professional and managerial capabilities.</p>
+</section>
+
+<section id="experience">
+<h2 class="title"><i class="fa-solid fa-briefcase"></i> Experience</h2>
+<div class="timeline">
+<div class="item">
+<div class="role"><span>CA Articleship Trainee</span><span class="date">Jan 2023 – Oct 2025</span></div>
+<div class="company">BSV & Associates</div>
+<ul>
+<li>Conducted statutory audits, internal audits, and tax audits for diverse corporate and individual clients.</li>
+<li>Managed preparation and finalization of financial statements, balance sheets, and ledger reconciliations.</li>
+<li>Handled direct and indirect tax compliance, including Income Tax Returns (ITR) and GST filings.</li>
+<li>Collaborated with audit teams and clients to identify compliance gaps and streamline accounting workflows.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="education">
+<h2 class="title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+<table>
+<thead><tr><th>Course & Year</th><th>Institute / Board</th><th>Score</th></tr></thead>
+<tbody>
+<tr><td><strong>PGDM</strong> (2026–28)</td><td>IMDR, Pune</td><td class="score">Pursuing</td></tr>
+<tr><td><strong>B.Com</strong> (2022)</td><td>YCMOU</td><td class="score">82.67%</td></tr>
+<tr><td><strong>HSC (12th)</strong></td><td>Maharashtra State Board</td><td class="score">71.00%</td></tr>
+<tr><td><strong>SSC (10th)</strong></td><td>Maharashtra State Board</td><td class="score">76.00%</td></tr>
+</tbody>
+</table>
+</section>
+</main>
+
+<aside>
+<section>
+<h2 class="title"><i class="fa-solid fa-user"></i> About Me</h2>
+<p>Currently pursuing a PGDM at IMDR, Pune, with a background in Commerce and hands-on Chartered Accountancy articleship experience. Strong in analytical work, financial accounting, auditing, communication, and problem solving.</p>
+</section>
+
+<section id="skills">
+<h2 class="title"><i class="fa-solid fa-screwdriver-wrench"></i> Skills</h2>
+<div class="skill-group"><div class="skill-heading">Financial Tools</div><div class="tags"><span class="tag">Tally ERP 9</span><span class="tag">GST Portal</span><span class="tag">Tax Filing Portals</span></div></div>
+<div class="skill-group"><div class="skill-heading">Productivity</div><div class="tags"><span class="tag">MS Excel</span><span class="tag">MS Word</span><span class="tag">PowerPoint</span><span class="tag">MSCIT Certified</span></div></div>
+<div class="skill-group"><div class="skill-heading">Core Skills</div><div class="tags"><span class="tag">Financial Reporting</span><span class="tag">Tax Auditing</span><span class="tag">Bookkeeping</span><span class="tag">Statutory Compliance</span></div></div>
+</section>
+
+<section>
+<h2 class="title"><i class="fa-solid fa-chart-line"></i> Competencies</h2>
+<ul class="clean">
+<li><i class="fa-solid fa-check"></i> Financial Analysis & Reporting</li>
+<li><i class="fa-solid fa-check"></i> Statutory & Tax Auditing</li>
+<li><i class="fa-solid fa-check"></i> Team Collaboration & Leadership</li>
+<li><i class="fa-solid fa-check"></i> Problem Solving & Decision Making</li>
+<li><i class="fa-solid fa-check"></i> Time Management & Adaptability</li>
+</ul>
+</section>
+
+<section>
+<h2 class="title"><i class="fa-solid fa-language"></i> Languages</h2>
+<p>English, Marathi, Hindi</p>
+</section>
+
+<section>
+<h2 class="title"><i class="fa-solid fa-heart"></i> Interests</h2>
+<ul class="clean">
+<li><i class="fa-solid fa-angle-right"></i> Cricket & Team Sports</li>
+<li><i class="fa-solid fa-angle-right"></i> Playing Guitar & Music</li>
+<li><i class="fa-solid fa-angle-right"></i> Business, Finance & Stock Markets</li>
+<li><i class="fa-solid fa-angle-right"></i> Self-Development & Reading</li>
+</ul>
+</section>
+</aside>
+</div>
+
+<footer>&copy; 2026 Abhijeet Santosh Joshi. All Rights Reserved.</footer>
+</div>
+
+<script>
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.nav-links').classList.remove('show')));
+</script>
+</body>
+</html>
